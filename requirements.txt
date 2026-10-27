@@ -1,0 +1,15 @@
+fastapi
+uvicorn[standard]
+python-multipart
+python-dotenv
+google-genai
+PyJWT
+Pillow
+joblib
+numpy
+pandas
+pypdf
+requests
+scikit-learn
+torch
+transformers

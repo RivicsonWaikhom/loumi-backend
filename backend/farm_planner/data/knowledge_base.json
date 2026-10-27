@@ -1,0 +1,655 @@
+{
+  "schema_version": 1,
+  "last_verified": "2026-10-19",
+  "notes": "Content is AI-assisted research notes for a decision-support app, not a diagnosis or a pesticide label. Every item carries an evidence label and source IDs (see sources). Edit without retraining the model.",
+  "evidence_labels": {
+    "verified_authoritative": "Verified against an authoritative applicable source",
+    "literature_supported_local_confirmation_needed": "Supported by literature; local applicability requires confirmation",
+    "background_only": "Background information only",
+    "not_verified_no_recommendation": "Not verified; no recommendation available"
+  },
+  "sources": {
+    "S1": {
+      "title": "AESA based IPM Package – Pineapple",
+      "org": "NIPHM / Directorate of Plant Protection, Quarantine & Storage, Govt. of India",
+      "url": "https://niphm.gov.in/IPMPackages/Pineapple.pdf",
+      "date": "undated (package, MoA&FW)",
+      "read": "Full text fetched and read",
+      "quality": "High (official Government of India IPM package); not Manipur-specific; compiled largely from secondary references",
+      "limits": "No entry for a disease called 'leaf blight'. Lists fusariosis under F. guttiforme. Contains no verified pineapple pesticide doses we used."
+    },
+    "S2": {
+      "title": "Transmission of pineapple mealybug wilt-associated virus by two species of pineapple mealybug",
+      "org": "Sether, Ullman & Hu, Phytopathology 88(11):1224-1230",
+      "url": "https://apsnet.org/publications/phytopathology/1998/November/Pages/88_11_1224.aspx",
+      "date": "1998-11",
+      "read": "Abstract only",
+      "quality": "High (peer-reviewed); Hawaii",
+      "limits": "Abstract only; 1998 Hawaii setting"
+    },
+    "S3": {
+      "title": "Presence of Dysmicoccus brevipes as vector of PMWaV on pineapple (ant association)",
+      "org": "Sartiami, Jurnal Ilmu Pertanian Indonesia 11(1):1-6",
+      "url": "https://doaj.org/article/2d4441d3082d421ba565ff53562fab61",
+      "date": "2006-04",
+      "read": "Abstract only",
+      "quality": "Moderate (peer-reviewed, regional journal); Indonesia",
+      "limits": "Greenhouse ant-carrying test; abstract only"
+    },
+    "S4": {
+      "title": "Elimination of PMWaV from pineapple tissue by hot water treatment and ribavirin",
+      "org": "Sutrawati, IPB University repository",
+      "url": "https://repository.ipb.ac.id/handle/123456789/4989?show=full",
+      "date": "n/d",
+      "read": "Abstract only",
+      "quality": "Low-moderate (thesis-level); Indonesia",
+      "limits": "Laboratory/propagation-stage result; not a farmer-ready protocol; do not display temperatures/times as advice"
+    },
+    "S5": {
+      "title": "Identification of Dysmicoccus brevipes and its association with PMWaV-1, -2, -3 in Peru",
+      "org": "Bulletin of Entomological Research (Cambridge)",
+      "url": "https://resolve.cambridge.org/core/journals/bulletin-of-entomological-research/article/identification-of-dysmicoccus-brevipes-and-its-association-with-pmwav1-2-and-3-in-hawaiiana-cultivar-and-md2-hybrid-pineapple-in-peru/B757F869E9D09323E35A07583220CF00",
+      "date": "n/d",
+      "read": "Search excerpt only",
+      "quality": "High (peer-reviewed); Peru",
+      "limits": "Excerpt only; the 'up to 40% yield decline' figure is quoted from another paper"
+    },
+    "S6": {
+      "title": "Fusarium ananatum sp. nov. in the Gibberella fujikuroi species complex from pineapples with fruit rot in South Africa",
+      "org": "Jacobs et al., Fungal Biology 114:515-527",
+      "url": "https://www.fabinet.up.ac.za/publication/pdfs/284-2010_jacobs_et_al_fungal_biol.pdf",
+      "date": "2010",
+      "read": "Search excerpt only",
+      "quality": "High (peer-reviewed); South Africa",
+      "limits": "Fruit-focused; excerpt only. Says fusariosis (F. guttiforme) reported only from South America"
+    },
+    "S7": {
+      "title": "Preliminary study of Fusarium species in pineapple crop in Costa Rica",
+      "org": "Blanco Meneses, Castro Zúñiga & Umaña Rojas (2022)",
+      "url": "https://kimuk.conare.ac.cr/Record/RIDE_00b5b77ff37e6683ec098b36cf401f5c?lng=en",
+      "date": "2022",
+      "read": "Abstract (catalogue record)",
+      "quality": "Moderate-high; Costa Rica",
+      "limits": "F. guttiforme not detected there; abstract only"
+    },
+    "S8": {
+      "title": "Fruitlet core rot pathosystem (Fusarium ananatum, Talaromyces funiculosus)",
+      "org": "PubMed Central article PMC7997448",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7997448",
+      "date": "n/d",
+      "read": "Search excerpt only",
+      "quality": "High (peer-reviewed)",
+      "limits": "Fruit disease; no external symptoms; not a leaf diagnostic"
+    },
+    "S9": {
+      "title": "First report of leaf spot caused by Exserohilum rostratum on pineapple, Hainan",
+      "org": "Plant Disease 96(3):458",
+      "url": "https://www.apsnet.org/publications/plantdisease/2012/March/Pages/96_3_458.3.aspx",
+      "date": "2012-03",
+      "read": "Search excerpt",
+      "quality": "High (peer-reviewed disease note); China",
+      "limits": "Single regional report"
+    },
+    "S10": {
+      "title": "First report of leaf spot of pineapple caused by Penicillium oxalicum",
+      "org": "AGRIS (FAO) record",
+      "url": "https://agris.fao.org/search/en/records/65de32ca4c5aef494fdae246",
+      "date": "n/d",
+      "read": "Search excerpt",
+      "quality": "Moderate-high; China",
+      "limits": "Single regional report"
+    },
+    "S11": {
+      "title": "Development of Curvularia leaf spot on pineapple (undergraduate thesis)",
+      "org": "Sriwijaya University repository",
+      "url": "https://repository.unsri.ac.id/70921",
+      "date": "2022",
+      "read": "Abstract",
+      "quality": "Low (undergraduate thesis); Indonesia",
+      "limits": "Background only"
+    },
+    "S12": {
+      "title": "Pineapple Leaf Disease Dataset for Deep Learning-Based Classification and Precision Agriculture (v2)",
+      "org": "Raj, Prakash & Malik, Mendeley Data, DOI 10.17632/gc5f8dfgrt.2",
+      "url": "https://data.mendeley.com/datasets/gc5f8dfgrt/2",
+      "date": "2026-05-26",
+      "read": "Dataset description page",
+      "quality": "Dataset documentation, not a disease reference",
+      "limits": "Says labels were expert-validated but gives no causal agent per class. Cannot confirm this is the dataset behind the supplied checkpoint (training path name is similar)"
+    },
+    "S13": {
+      "title": "Plant protection – Kew (Kerala Agricultural University information gateway)",
+      "org": "Kerala Agricultural University (celkau.in)",
+      "url": "https://celkau.in/crops/Fruits/Pineapple/plant_protection_kew.aspx",
+      "date": "page header 2025-09-10",
+      "read": "Search excerpt",
+      "quality": "Moderate (state university, Kerala); chemical items not verified against a current label",
+      "limits": "Contains pesticide names/doses that we did NOT adopt"
+    },
+    "S14": {
+      "title": "Pineapple – pests (National Horticulture Board)",
+      "org": "NHB, Govt. of India",
+      "url": "https://nhb.gov.in/pdf/fruits/pineapple/pin008.pdf",
+      "date": "n/d",
+      "read": "Search excerpt",
+      "quality": "Low for chemicals: lists organochlorine and fumigant products that appear obsolete",
+      "limits": "REJECTED for chemical advice"
+    },
+    "S15": {
+      "title": "Pineapple – diseases overview",
+      "org": "PlantVillage, Penn State",
+      "url": "https://plantvillage.psu.edu/topics/pineapple/infos",
+      "date": "n/d",
+      "read": "Search excerpt",
+      "quality": "Background",
+      "limits": "General overview; not India-specific"
+    },
+    "S16": {
+      "title": "Reunion Island: survey of pineapple parasites with focus on wilt disease",
+      "org": "ISHS Acta Horticulturae 1402_10",
+      "url": "https://ishs.org/ishs-article/1402_10/",
+      "date": "n/d",
+      "read": "Abstract",
+      "quality": "High (peer-reviewed); Reunion",
+      "limits": "Abstract only"
+    },
+    "S17": {
+      "title": "Trap-crop host evaluation for pineapple mealybug",
+      "org": "Indian Journal of Agricultural Sciences 94(8), DOI 10.56093/ijas.v94i8.148188",
+      "url": "https://doaj.org/article/6e724028bd7b43ecbd90497005539e74",
+      "date": "2024-08",
+      "read": "Abstract",
+      "quality": "Moderate; small-scale Malaysian screening",
+      "limits": "Early-stage research, not an adoptable practice"
+    },
+    "S18": {
+      "title": "Pineapple Leaf Wilt Disease (Roboflow dataset page)",
+      "org": "Roboflow Universe",
+      "url": "https://universe.roboflow.com/something-pc1gd/pineapple-leaf-wilt-disease",
+      "date": "2025-03",
+      "read": "Search excerpt",
+      "quality": "Not a disease reference",
+      "limits": "Not used"
+    }
+  },
+  "classes": [
+    {
+      "id": "leaf_blight",
+      "model_class": "Pineapple__leaf_blight",
+      "display_name": "Pineapple leaf blight",
+      "explanation": "This label comes from the image dataset the model was trained on. We could not find an established pineapple disease called 'leaf blight' in the Indian official IPM package, so treat this result as 'a leaf-lesion pattern that resembles the dataset's blight images', not as a confirmed named disease.",
+      "symptoms": [
+        {
+          "text": "Documented pineapple leaf-spot diseases include white leaf spot: small brown spots at rubbed leaf margins that lengthen in wet weather and dry to papery cream or white patches with brown margins.",
+          "evidence": "verified_authoritative",
+          "sources": [
+            "S1"
+          ]
+        },
+        {
+          "text": "Other regional reports describe leaf spots with banded light-brown to reddish-brown edges that can merge into large lesions (Exserohilum rostratum, Hainan; Penicillium oxalicum, Leizhou).",
+          "evidence": "literature_supported_local_confirmation_needed",
+          "sources": [
+            "S9",
+            "S10"
+          ]
+        },
+        {
+          "text": "A student thesis describes Curvularia leaf spot starting as small yellow-brown spots that enlarge to dark brown irregular patches.",
+          "evidence": "background_only",
+          "sources": [
+            "S11"
+          ]
+        }
+      ],
+      "look_alikes": [
+        {
+          "text": "Nutrient deficiency, sunscald, mechanical rubbing damage and mite damage can resemble disease; NIPHM notes that unclear symptoms need close examination or lab analysis.",
+          "evidence": "verified_authoritative",
+          "sources": [
+            "S1"
+          ]
+        },
+        {
+          "text": "Early mealybug wilt can show reddish leaves and leaf-tip death.",
+          "evidence": "verified_authoritative",
+          "sources": [
+            "S1"
+          ]
+        }
+      ],
+      "immediate_actions": [
+        {
+          "text": "Examine several leaves and neighbouring plants; record percent of leaf area affected and how many plants show it.",
+          "evidence": "verified_authoritative",
+          "sources": [
+            "S1"
+          ]
+        },
+        {
+          "text": "Collect and destroy badly diseased leaves and plant debris; keep field drained.",
+          "evidence": "verified_authoritative",
+          "sources": [
+            "S1"
+          ]
+        }
+      ],
+      "non_chemical": [
+        {
+          "text": "Remove and destroy diseased plant parts and crop residues; use healthy planting material; maintain drainage; weekly field monitoring.",
+          "evidence": "verified_authoritative",
+          "sources": [
+            "S1"
+          ]
+        }
+      ],
+      "chemical_control": {
+        "status": "withheld",
+        "message": "No verified chemical-control recommendation is available in the current knowledge base for this crop, condition, and location. Consult a qualified agricultural extension officer before applying pesticides.",
+        "reason": "Kerala university and older national pages list fungicides, but none was verified as a current registered pineapple label for this condition and location.",
+        "sources": [
+          "S13",
+          "S1"
+        ]
+      },
+      "prevention": [
+        {
+          "text": "Avoid wounding leaves during field operations; use sterilised tools; avoid planting in wet weather.",
+          "evidence": "verified_authoritative",
+          "sources": [
+            "S1"
+          ],
+          "note": "Wound-entry is documented for white leaf spot and butt rot; assumed relevant to other leaf spots, unconfirmed."
+        }
+      ],
+      "spread_reduction": [
+        {
+          "text": "Destroy infected debris away from the field; avoid moving plant parts between plots.",
+          "evidence": "verified_authoritative",
+          "sources": [
+            "S1"
+          ]
+        }
+      ],
+      "vectors": [],
+      "monitoring": [
+        {
+          "text": "Scout weekly; re-photograph the same leaf after a set interval to see whether lesions are spreading.",
+          "evidence": "verified_authoritative",
+          "sources": [
+            "S1"
+          ],
+          "note": "Weekly interval is from NIPHM general scouting; photo re-check is an app design choice."
+        }
+      ],
+      "seek_expert_help": [
+        "Spots are spreading across many plants or leaves.",
+        "Cause is unclear or the result conflicts with what you see.",
+        "Before applying any pesticide."
+      ],
+      "geographic_applicability": "No Manipur- or NE-India-specific source found. Regional reports are from China, Indonesia and Kerala.",
+      "verification_status": "literature_supported_local_confirmation_needed",
+      "last_verified": "2026-10-19",
+      "unresolved": [
+        "Which pathogen(s) the dataset's 'blight' images represent is not documented in the sources we could access.",
+        "No source ties the label to a specific management protocol."
+      ]
+    },
+    {
+      "id": "fusarium",
+      "model_class": "Pineapple_fusarium",
+      "display_name": "Pineapple Fusarium-related disease",
+      "explanation": "Fusarium diseases of pineapple are best documented on fruit and stems. Leaf-based identification of Fusarium is weakly supported in the literature we found, so this result is a visual resemblance only and cannot confirm the pathogen.",
+      "symptoms": [
+        {
+          "text": "Fusariosis is described as affecting all plant parts but most visible and damaging on fruit; stem girdling or killing can cause rosetting and curvature.",
+          "evidence": "verified_authoritative",
+          "sources": [
+            "S1"
+          ]
+        },
+        {
+          "text": "Fruitlet core rot shows as internal browning with no external signs on many fruit, so it cannot be seen on leaves.",
+          "evidence": "verified_authoritative",
+          "sources": [
+            "S1",
+            "S8"
+          ]
+        }
+      ],
+      "look_alikes": [
+        {
+          "text": "Base (butt) rot, Phytophthora heart rot, nutrient problems and mealybug wilt can all produce wilting or discolouring leaves.",
+          "evidence": "verified_authoritative",
+          "sources": [
+            "S1"
+          ]
+        }
+      ],
+      "immediate_actions": [
+        {
+          "text": "Check the stem base and heart of the plant and, if fruiting, fruit; note any gum, rot, or stem distortion.",
+          "evidence": "literature_supported_local_confirmation_needed",
+          "sources": [
+            "S1"
+          ],
+          "note": "Inspection steps adapted from NIPHM disease descriptions; not a protocol written for this class."
+        },
+        {
+          "text": "Remove and destroy diseased plants and debris.",
+          "evidence": "verified_authoritative",
+          "sources": [
+            "S1"
+          ]
+        }
+      ],
+      "non_chemical": [
+        {
+          "text": "Use fresh, disease-free suckers/planting material; avoid wounding plants; handle fruit carefully; keep drainage good; collect and destroy debris.",
+          "evidence": "verified_authoritative",
+          "sources": [
+            "S1"
+          ]
+        }
+      ],
+      "chemical_control": {
+        "status": "withheld",
+        "message": "No verified chemical-control recommendation is available in the current knowledge base for this crop, condition, and location. Consult a qualified agricultural extension officer before applying pesticides.",
+        "reason": "No current registered pineapple fungicide label was located.",
+        "sources": [
+          "S1"
+        ]
+      },
+      "prevention": [
+        {
+          "text": "NIPHM states infection of flowers and fruit occurs mainly through insect injuries and infected planting material, so insect control and clean planting material matter.",
+          "evidence": "verified_authoritative",
+          "sources": [
+            "S1"
+          ]
+        }
+      ],
+      "spread_reduction": [
+        {
+          "text": "Do not move infected plant parts between fields; destroy rejected fruit and refuse.",
+          "evidence": "verified_authoritative",
+          "sources": [
+            "S1"
+          ]
+        }
+      ],
+      "vectors": [],
+      "monitoring": [
+        {
+          "text": "Weekly scouting of leaves, stems and, later, fruit.",
+          "evidence": "verified_authoritative",
+          "sources": [
+            "S1"
+          ]
+        }
+      ],
+      "seek_expert_help": [
+        "Any suspected Fusarium case, since confirmation needs laboratory culture or molecular testing.",
+        "Rosetting, stem curvature or gummy fruit rot."
+      ],
+      "geographic_applicability": "NIPHM names F. guttiforme for India, but Jacobs et al. (2010) say fusariosis from F. guttiforme was reported only from South America; F. ananatum is the species found in South Africa, Costa Rica and elsewhere. Which Fusarium species occurs in Manipur is unresolved.",
+      "verification_status": "literature_supported_local_confirmation_needed",
+      "last_verified": "2026-10-19",
+      "unresolved": [
+        "Evidence that Fusarium produces a reliable visible leaf pattern is not established in the sources we read.",
+        "Species present in NE India unverified.",
+        "A 2020 Philippine paper appears to report Fusarium on pineapple leaves, but only a garbled excerpt was accessible, so it was not used."
+      ]
+    },
+    {
+      "id": "healthy",
+      "model_class": "Pineapple_healthy",
+      "display_name": "Healthy pineapple leaf",
+      "explanation": "The model sees no pattern resembling the three disease classes in this photo. That does not prove the plant is healthy: roots, stem base, heart, fruit and insects such as mealybugs are not visible in a leaf photo.",
+      "symptoms": [],
+      "look_alikes": [
+        {
+          "text": "Early mealybug wilt, root rots and nematode damage can occur before leaves look abnormal; NIPHM notes slow wilt may show no definite colour change.",
+          "evidence": "verified_authoritative",
+          "sources": [
+            "S1"
+          ]
+        }
+      ],
+      "immediate_actions": [
+        {
+          "text": "No treatment is indicated by this result. Continue routine checks.",
+          "evidence": "verified_authoritative",
+          "sources": [
+            "S1"
+          ]
+        }
+      ],
+      "non_chemical": [
+        {
+          "text": "Healthy suckers, drainage, balanced nutrition based on soil tests, weed control and weekly monitoring are the NIPHM-recommended foundations.",
+          "evidence": "verified_authoritative",
+          "sources": [
+            "S1"
+          ]
+        }
+      ],
+      "chemical_control": {
+        "status": "not_applicable",
+        "message": "A healthy result does not call for pesticide use.",
+        "reason": "",
+        "sources": [
+          "S1"
+        ]
+      },
+      "prevention": [
+        {
+          "text": "Check for ants and mealybug colonies at plant bases and on roots; keep field and borders free of weeds that host mealybugs.",
+          "evidence": "verified_authoritative",
+          "sources": [
+            "S1"
+          ]
+        }
+      ],
+      "spread_reduction": [],
+      "vectors": [],
+      "monitoring": [
+        {
+          "text": "Weekly scouting; check roots and stem base of plants that look weak.",
+          "evidence": "verified_authoritative",
+          "sources": [
+            "S1"
+          ]
+        }
+      ],
+      "seek_expert_help": [
+        "Plant looks unhealthy despite a healthy result."
+      ],
+      "geographic_applicability": "General; NIPHM national package.",
+      "verification_status": "verified_authoritative",
+      "last_verified": "2026-10-19",
+      "unresolved": []
+    },
+    {
+      "id": "mealybug_wilt",
+      "model_class": "Pineapple_mealybug_wilt",
+      "display_name": "Pineapple mealybug wilt",
+      "explanation": "Mealybug wilt is associated with viruses carried by mealybugs, not a simple fungal infection. The leaf pattern is not specific, and the mealybugs may be on roots or hidden at the plant base, so absence of visible insects proves nothing.",
+      "symptoms": [
+        {
+          "text": "Early reddening of leaves about halfway up the plant, then pink, loss of stiffness, downward-rolling margins and dead leaf tips; roots collapse; fruit is smaller.",
+          "evidence": "verified_authoritative",
+          "sources": [
+            "S1"
+          ]
+        },
+        {
+          "text": "Slow wilt may show no colour change; quick wilt shows yellow or red leaves under heavy infestation.",
+          "evidence": "verified_authoritative",
+          "sources": [
+            "S1"
+          ]
+        },
+        {
+          "text": "Younger plants may show symptoms 2-3 months after mealybug feeding; older plants up to about 12 months.",
+          "evidence": "verified_authoritative",
+          "sources": [
+            "S1"
+          ]
+        },
+        {
+          "text": "Symptoms are most obvious in winter when growth is slow.",
+          "evidence": "verified_authoritative",
+          "sources": [
+            "S1"
+          ]
+        }
+      ],
+      "look_alikes": [
+        {
+          "text": "Phytophthora root rot, nematodes and low soil oxygen cause similar above-ground symptoms that are not diagnostic.",
+          "evidence": "verified_authoritative",
+          "sources": [
+            "S1"
+          ]
+        },
+        {
+          "text": "Nutrient deficiencies can colour leaves yellow, purple or red.",
+          "evidence": "verified_authoritative",
+          "sources": [
+            "S1"
+          ]
+        }
+      ],
+      "immediate_actions": [
+        {
+          "text": "Check roots, the base of leaves and the stem for pinkish cottony mealybugs and for ants tending them.",
+          "evidence": "verified_authoritative",
+          "sources": [
+            "S1"
+          ]
+        },
+        {
+          "text": "If under 3% of plants show wilt, remove infected plants by hand and destroy them.",
+          "evidence": "verified_authoritative",
+          "sources": [
+            "S1"
+          ]
+        },
+        {
+          "text": "If over 10% show wilt, do not use the field as a source of planting material; eradicate badly affected areas right after harvest.",
+          "evidence": "verified_authoritative",
+          "sources": [
+            "S1"
+          ]
+        }
+      ],
+      "non_chemical": [
+        {
+          "text": "Use planting material from wilt-free fields or fields with little wilt.",
+          "evidence": "verified_authoritative",
+          "sources": [
+            "S1"
+          ]
+        },
+        {
+          "text": "Destroy ant colonies and remove weeds and trash that shelter ants and mealybugs; remove alternate hosts such as hibiscus, custard apple and guava in and around the field.",
+          "evidence": "verified_authoritative",
+          "sources": [
+            "S1"
+          ]
+        },
+        {
+          "text": "After an infested crop, clear and burn plant residues before replanting; use sterilised tools in uninfested fields.",
+          "evidence": "verified_authoritative",
+          "sources": [
+            "S1"
+          ]
+        },
+        {
+          "text": "Conserve natural enemies (parasitoids, ladybird and lacewing predators); biological sprays are listed but check product label claims.",
+          "evidence": "verified_authoritative",
+          "sources": [
+            "S1"
+          ]
+        }
+      ],
+      "chemical_control": {
+        "status": "withheld",
+        "message": "No verified chemical-control recommendation is available in the current knowledge base for this crop, condition, and location. Consult a qualified agricultural extension officer before applying pesticides.",
+        "reason": "NIPHM says insecticides are a last resort and to follow label claims. A Kerala page names an insecticide, and a National Horticulture Board page names older products that appear obsolete. None was verified as currently registered for pineapple mealybug in India, and no doses are stored.",
+        "sources": [
+          "S1",
+          "S13",
+          "S14"
+        ]
+      },
+      "prevention": [
+        {
+          "text": "Vegetative planting material is a major route for the viruses; the disease is probably introduced in material that looks normal.",
+          "evidence": "verified_authoritative",
+          "sources": [
+            "S1"
+          ]
+        },
+        {
+          "text": "Ants tend mealybugs and raise virus spread rates in experiments.",
+          "evidence": "literature_supported_local_confirmation_needed",
+          "sources": [
+            "S2",
+            "S3"
+          ]
+        }
+      ],
+      "spread_reduction": [
+        {
+          "text": "Ants move mealybugs between plants; wind also disperses them. Control ants, keep borders weed-free, and do not move plants from affected plots.",
+          "evidence": "verified_authoritative",
+          "sources": [
+            "S1"
+          ]
+        },
+        {
+          "text": "Both the pink mealybug (Dysmicoccus brevipes) and grey mealybug (D. neobrevipes) can acquire and transmit the virus.",
+          "evidence": "literature_supported_local_confirmation_needed",
+          "sources": [
+            "S2"
+          ]
+        }
+      ],
+      "vectors": [
+        {
+          "text": "D. brevipes is the main vector named in NIPHM; D. neobrevipes also transmits in Hawaiian experiments.",
+          "evidence": "verified_authoritative",
+          "sources": [
+            "S1",
+            "S2"
+          ]
+        }
+      ],
+      "monitoring": [
+        {
+          "text": "Count mealybug nymphs and adults on five leaves per plant, scouting weekly after establishment.",
+          "evidence": "verified_authoritative",
+          "sources": [
+            "S1"
+          ]
+        }
+      ],
+      "seek_expert_help": [
+        "More than a few plants affected.",
+        "Before keeping planting material from a wilt-affected field.",
+        "Before any insecticide use."
+      ],
+      "geographic_applicability": "NIPHM national package; global literature from Hawaii, Peru, Indonesia, Reunion. Not Manipur-specific.",
+      "verification_status": "verified_authoritative",
+      "last_verified": "2026-10-19",
+      "unresolved": [
+        "Hot-water treatment of planting material (Indonesian thesis) is not validated for farm use and is not in the advice.",
+        "Banana trap-crop result is early-stage and not recommended.",
+        "The role of each PMWaV species is debated; PMWaV-2 is the one associated with wilt in some studies.",
+        "Wilt may occur with few visible mealybugs."
+      ]
+    }
+  ]
+}

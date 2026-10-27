@@ -1,0 +1,56 @@
+[
+  {
+    "id": "pineapple_nongmaiching_02",
+    "title": "Hillside Pineapple Plantation",
+    "location": "Nongmaiching Ching, Imphal East",
+    "crop": "Pineapple (Queen/Kew)",
+    "source": "Wikimedia Commons (CC BY 4.0, Haoreima)",
+    "image1200": "/images/manipur_agriculture/pineapple_nongmaiching_02_1200x800.jpg",
+    "image454": "/images/manipur_agriculture/pineapple_nongmaiching_02_454x303.jpg"
+  },
+  {
+    "id": "pineapple_nongmaiching_01",
+    "title": "Terraced Pineapple Slopes",
+    "location": "Nongmaiching Reserved Forest, Imphal East",
+    "crop": "Pineapple Plantation",
+    "source": "Wikimedia Commons (CC BY 4.0, Haoreima)",
+    "image1200": "/images/manipur_agriculture/pineapple_nongmaiching_01_1200x800.jpg",
+    "image454": "/images/manipur_agriculture/pineapple_nongmaiching_01_454x303.jpg"
+  },
+  {
+    "id": "paddy_noney_district",
+    "title": "Hybrid Paddy Terraces & Farmers",
+    "location": "Noney District, Manipur",
+    "crop": "Rice / Paddy",
+    "source": "Government of Manipur (Noney District Official Portal)",
+    "image1200": "/images/manipur_agriculture/paddy_noney_district_1200x800.jpg",
+    "image454": "/images/manipur_agriculture/paddy_noney_district_454x303.jpg"
+  },
+  {
+    "id": "rice_planting_epao",
+    "title": "Women Farmers Transplanting Paddy",
+    "location": "Paddy Fields, Manipur",
+    "crop": "Rice Cultivation",
+    "source": "E-Pao Photo Documentation Archive",
+    "image1200": "/images/manipur_agriculture/rice_planting_epao_1200x800.jpg",
+    "image454": "/images/manipur_agriculture/rice_planting_epao_454x303.jpg"
+  },
+  {
+    "id": "rice_paddy_unt",
+    "title": "Manipur Valley Rice Field Landscape",
+    "location": "Manipur, India",
+    "crop": "Rice Fields",
+    "source": "UNT Digital Library (Item metadc1631579)",
+    "image1200": "/images/manipur_agriculture/rice_paddy_unt_1200x800.jpg",
+    "image454": "/images/manipur_agriculture/rice_paddy_unt_454x303.jpg"
+  },
+  {
+    "id": "horticulture_noney_cabbage",
+    "title": "Highland Horticulture & Crop Diversity",
+    "location": "Noney District, Manipur",
+    "crop": "Cabbage / Organic Crops",
+    "source": "Government of Manipur (Noney District Official Portal)",
+    "image1200": "/images/manipur_agriculture/horticulture_noney_cabbage_1200x800.jpg",
+    "image454": "/images/manipur_agriculture/horticulture_noney_cabbage_454x303.jpg"
+  }
+]

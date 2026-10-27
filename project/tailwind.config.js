@@ -1,0 +1,59 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
+      },
+      colors: {
+        forest: {
+          50: '#f1f7f1',
+          100: '#dcecdc',
+          200: '#bcd8bd',
+          300: '#8fbf91',
+          400: '#5e9d62',
+          500: '#3f8044',
+          600: '#2e6634',
+          700: '#25522b',
+          800: '#1f4224',
+          900: '#163117',
+          950: '#0c1d0e',
+        },
+        pineapple: {
+          50: '#fefce8',
+          100: '#fef8c3',
+          200: '#fdeb8a',
+          300: '#fcd84f',
+          400: '#fbc12b',
+          500: '#f5a505',
+          600: '#d98002',
+          700: '#b45c06',
+          800: '#90480c',
+          900: '#763c0e',
+        },
+        earth: {
+          50: '#faf6f0',
+          100: '#f0e6d6',
+          200: '#e2cda9',
+          300: '#d0b07c',
+          400: '#bd9357',
+          500: '#a87c43',
+          600: '#8c6436',
+          700: '#6f4e2d',
+          800: '#563e28',
+          900: '#43341f',
+        },
+      },
+      boxShadow: {
+        card: '0 1px 2px rgba(16, 49, 14, 0.04), 0 6px 24px -8px rgba(16, 49, 14, 0.12)',
+        cardHover: '0 2px 6px rgba(16, 49, 14, 0.08), 0 18px 40px -12px rgba(16, 49, 14, 0.22)',
+      },
+      borderRadius: {
+        xl2: '1.25rem',
+      },
+    },
+  },
+  plugins: [],
+};

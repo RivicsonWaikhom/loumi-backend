@@ -1,0 +1,24 @@
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+.env
+.env.*
+!.env.example
+node_modules/
+.git/
+.DS_Store
+
+test_export_output/
+dist/
+
+**/.venv/
+**/venv/
+**/node_modules/
+**/__pycache__/
+test_export_output/
+
+# Exclude nested project copies and generated files
+Models/
+test_export_output/
+backend/loumi.db

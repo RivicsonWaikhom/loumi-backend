@@ -1,0 +1,14 @@
+{
+  "name": "loumi-website-root",
+  "private": true,
+  "scripts": {
+    "build": "npm --prefix project run build",
+    "dev": "npm --prefix project run dev",
+    "preview": "npm --prefix project run preview"
+  },
+  "dependencies": {
+    "jspdf": "^4.2.1",
+    "jspdf-autotable": "^5.0.9",
+    "xlsx": "^0.18.5"
+  }
+}
