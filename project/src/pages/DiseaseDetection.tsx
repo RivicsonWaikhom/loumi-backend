@@ -61,6 +61,7 @@ const classBadge: Record<string, string> = {
 
 export default function DiseaseDetection() {
   const [file, setFile] = useState<File | null>(null);
+  const [captureSource, setCaptureSource] = useState<'upload' | 'camera'>('upload');
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const [notes, setNotes] = useState('');
   const [state, setState] = useState<State>({ status: 'idle' });
@@ -115,8 +116,9 @@ export default function DiseaseDetection() {
     [selectedFarm, selectedPlantId]
   );
 
-  const handleFile = (f: File) => {
+  const handleFile = (f: File, source: 'upload' | 'camera' = 'upload') => {
     setFile(f);
+    setCaptureSource(source);
     setPreviewUrl(URL.createObjectURL(f));
     setState({ status: 'idle' });
     setSavedObservationSuccess(null);
@@ -124,6 +126,7 @@ export default function DiseaseDetection() {
 
   const clear = () => {
     setFile(null);
+    setCaptureSource('upload');
     if (previewUrl) URL.revokeObjectURL(previewUrl);
     setPreviewUrl(null);
     setState({ status: 'idle' });
@@ -136,6 +139,7 @@ export default function DiseaseDetection() {
     setSavedObservationSuccess(null);
     try {
       const data = await analyzeImage(file, {
+        captureSource,
         notes: notes.trim() || undefined,
         farmId: selectedFarmId || undefined,
         plantId: selectedPlantId || undefined,
@@ -261,6 +265,8 @@ export default function DiseaseDetection() {
                   onFileSelected={handleFile}
                   onClear={clear}
                   disabled={state.status === 'loading'}
+                  onAnalyze={analyze}
+                  isAnalyzing={state.status === 'loading'}
                 />
               </div>
 
@@ -355,7 +361,17 @@ export default function DiseaseDetection() {
               size="lg"
               className="w-full sm:w-auto"
             >
-              <Sparkles className="h-5 w-5" /> Analyze Leaf Image
+              {state.status === 'loading' ? (
+                <>
+                  <span className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent" />
+                  <span>Detecting Disease...</span>
+                </>
+              ) : (
+                <>
+                  <Sparkles className="h-5 w-5" />
+                  <span>Detect Disease</span>
+                </>
+              )}
             </Button>
           </section>
 
