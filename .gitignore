@@ -22,3 +22,9 @@ test_export_output/
 Models/
 test_export_output/
 backend/loumi.db
+
+# Backup, temporary, and test artifacts
+*.bak
+*.bak_*
+*.tmp
+
