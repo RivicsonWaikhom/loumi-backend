@@ -15,6 +15,8 @@ import {
   Bug,
   Wrench,
   AlertCircle,
+  AlertTriangle,
+  Scissors,
   ArrowRight,
   ShoppingCart,
   Star,
@@ -126,6 +128,8 @@ export default function MarketplaceHome() {
 
   const getCategoryIcon = (slug?: string) => {
     switch (slug) {
+      case 'weed-control':
+        return <Scissors className="h-4 w-4" />;
       case 'bio-protection':
         return <ShieldCheck className="h-4 w-4" />;
       case 'fertilizers-soil-health':
@@ -393,7 +397,15 @@ function ProductCard({
       <div>
         {/* Top Badges */}
         <div className="flex items-center justify-between gap-2">
-          {isOrganic ? (
+          {product.verification_status === 'unconfirmed' ? (
+            <span
+              className="inline-flex items-center gap-1 rounded-full bg-amber-50 px-2.5 py-0.5 text-[11px] font-bold text-amber-900 ring-1 ring-amber-300"
+              title="Verification required — not an application recommendation"
+            >
+              <AlertTriangle className="h-3 w-3 text-amber-600" />
+              <span>Verification Req.</span>
+            </span>
+          ) : isOrganic ? (
             <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-0.5 text-[11px] font-semibold text-emerald-800 ring-1 ring-emerald-200">
               <Leaf className="h-3 w-3 text-emerald-600" />
               <span>Organic</span>
@@ -413,8 +425,38 @@ function ProductCard({
 
         {/* Product Visual & Identity */}
         <Link to={`/marketplace/product/${product.id}`} className="mt-3 block">
-          <div className="flex h-36 w-full items-center justify-center rounded-xl bg-forest-50/50 p-4 transition group-hover:bg-forest-50">
-            <div className="flex flex-col items-center justify-center text-center">
+          <div className="relative flex h-40 w-full items-center justify-center overflow-hidden rounded-xl bg-forest-50/50 p-2 transition group-hover:bg-forest-50">
+            {product.image_type === 'official_packshot' ? (
+              <span className="absolute top-2 left-2 z-10 rounded-md bg-emerald-800/90 px-2 py-0.5 text-[10px] font-semibold text-white shadow-xs backdrop-blur-xs">
+                Official Packshot
+              </span>
+            ) : product.image_type === 'unverified_reference' ? (
+              <span className="absolute top-2 left-2 z-10 rounded-md bg-amber-800/90 px-2 py-0.5 text-[10px] font-semibold text-white shadow-xs backdrop-blur-xs">
+                Pack Ref.
+              </span>
+            ) : (
+              <span className="absolute top-2 left-2 z-10 rounded-md bg-forest-800/80 px-2 py-0.5 text-[10px] font-medium text-white shadow-xs backdrop-blur-xs">
+                Representative Ref.
+              </span>
+            )}
+
+            {product.image_url ? (
+              <img
+                src={product.image_url}
+                alt={product.name}
+                className="h-full w-full object-contain p-1 transition duration-200 group-hover:scale-105"
+                onError={(e) => {
+                  (e.currentTarget as HTMLElement).style.display = 'none';
+                  const fallback = e.currentTarget.parentElement?.querySelector('.fallback-placeholder');
+                  if (fallback) (fallback as HTMLElement).classList.remove('hidden');
+                }}
+              />
+            ) : null}
+            <div
+              className={`fallback-placeholder flex flex-col items-center justify-center text-center ${
+                product.image_url ? 'hidden' : ''
+              }`}
+            >
               <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white shadow-2xs text-forest-700">
                 <Sprout className="h-6 w-6" />
               </span>
@@ -426,6 +468,25 @@ function ProductCard({
             {product.name}
           </h3>
         </Link>
+
+        {/* Image Integrity Note */}
+        {product.image_note && (
+          <p className="mt-1 text-[11px] text-forest-500 italic line-clamp-1" title={product.image_note}>
+            Photo note: {product.image_note}
+          </p>
+        )}
+
+        {/* Unconfirmed Off-Label Mandatory Label Alert */}
+        {product.verification_status === 'unconfirmed' && (
+          <div className="mt-2 rounded-lg border border-amber-300 bg-amber-50/90 px-2 py-1 text-[11px] font-medium text-amber-900">
+            <div className="flex items-start gap-1.5">
+              <AlertTriangle className="h-3.5 w-3.5 shrink-0 text-amber-600 mt-0.5" />
+              <span className="leading-tight">
+                <strong>Verification required</strong> — not an application recommendation
+              </span>
+            </div>
+          </div>
+        )}
 
         {/* Package & Crops */}
         <div className="mt-2 flex items-center justify-between text-xs text-forest-600">

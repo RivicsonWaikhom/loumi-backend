@@ -151,8 +151,38 @@ export default function ProductDetail() {
           {/* Left Column: Media & Highlights */}
           <div className="lg:col-span-5">
             <div className="overflow-hidden rounded-3xl border border-forest-100 bg-white p-8 shadow-xs">
-              <div className="flex h-72 w-full items-center justify-center rounded-2xl bg-linear-to-b from-forest-50/60 to-white p-6">
-                <div className="flex flex-col items-center justify-center text-center">
+              <div className="relative flex h-72 w-full items-center justify-center rounded-2xl bg-linear-to-b from-forest-50/60 to-white p-4">
+                {product.image_type === 'official_packshot' ? (
+                  <span className="absolute top-3 left-3 z-10 rounded-md bg-emerald-800/90 px-2.5 py-1 text-xs font-semibold text-white shadow-xs backdrop-blur-xs">
+                    Official Packshot
+                  </span>
+                ) : product.image_type === 'unverified_reference' ? (
+                  <span className="absolute top-3 left-3 z-10 rounded-md bg-amber-800/90 px-2.5 py-1 text-xs font-semibold text-white shadow-xs backdrop-blur-xs">
+                    Pack Verification Ref.
+                  </span>
+                ) : (
+                  <span className="absolute top-3 left-3 z-10 rounded-md bg-forest-800/80 px-2.5 py-1 text-xs font-medium text-white shadow-xs backdrop-blur-xs">
+                    Representative Agricultural Ref.
+                  </span>
+                )}
+
+                {product.image_url ? (
+                  <img
+                    src={product.image_url}
+                    alt={product.name}
+                    className="h-full max-h-64 w-auto object-contain drop-shadow-sm transition hover:scale-105"
+                    onError={(e) => {
+                      (e.currentTarget as HTMLElement).style.display = 'none';
+                      const fallback = e.currentTarget.parentElement?.querySelector('.fallback-placeholder');
+                      if (fallback) (fallback as HTMLElement).classList.remove('hidden');
+                    }}
+                  />
+                ) : null}
+                <div
+                  className={`fallback-placeholder flex flex-col items-center justify-center text-center ${
+                    product.image_url ? 'hidden' : ''
+                  }`}
+                >
                   <span className="flex h-20 w-20 items-center justify-center rounded-3xl bg-forest-100 text-forest-700 shadow-xs">
                     {isOrganic ? <Leaf className="h-10 w-10 text-emerald-600" /> : <Package className="h-10 w-10" />}
                   </span>
@@ -161,8 +191,52 @@ export default function ProductDetail() {
                 </div>
               </div>
 
+              {/* Image Reference & Integrity Note */}
+              {product.image_note && (
+                <div className="mt-4 rounded-xl border border-forest-100 bg-forest-50/70 p-3 text-xs text-forest-800">
+                  <div className="flex items-start gap-2">
+                    <Info className="h-4 w-4 shrink-0 text-forest-600 mt-0.5" />
+                    <div>
+                      <p className="font-bold text-forest-900">
+                        {product.image_type === 'official_packshot'
+                          ? 'Official Packaging Photography'
+                          : 'Image Reference Note'}
+                      </p>
+                      <p className="mt-0.5 text-xs text-forest-700 leading-relaxed">{product.image_note}</p>
+                      {product.image_type !== 'official_packshot' && (
+                        <p className="mt-1 text-[11px] text-forest-500 italic">
+                          Important: This photo is a representative reference. Do not present a representative photo as the exact product sold by Loumi.
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              )}
+
               {/* Verified Agricultural Trust Badges */}
               <div className="mt-6 space-y-3 border-t border-forest-100 pt-6">
+                {product.verification_status === 'unconfirmed' ? (
+                  <div className="flex items-start gap-3 rounded-2xl border-2 border-amber-300 bg-amber-50/90 p-4 text-amber-900 shadow-xs">
+                    <AlertTriangle className="h-5 w-5 shrink-0 text-amber-600 mt-0.5" />
+                    <div>
+                      <p className="text-sm font-bold text-amber-950">
+                        Verification required — not an application recommendation
+                      </p>
+                      <p className="mt-1 text-xs leading-relaxed text-amber-800">
+                        While this active ingredient is documented in university agronomy literature for tropical agriculture, pineapple may not currently be a primary schedule on the CIB&amp;RC container label in India. Loumi does not endorse off-label use. Please inspect physical container labels and consult your local Krishi Vigyan Kendra (KVK) or Horticulture Officer prior to application.
+                      </p>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="flex items-center gap-2.5 rounded-xl bg-forest-50 p-3 text-xs text-forest-800">
+                    <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-600" />
+                    <div>
+                      <p className="font-bold">Verified Agricultural Input</p>
+                      <p className="text-forest-600">Standardized specification suitable for Manipur crop cultivation.</p>
+                    </div>
+                  </div>
+                )}
+
                 {isOrganic && (
                   <div className="flex items-center gap-2.5 rounded-xl bg-emerald-50/80 p-3 text-xs text-emerald-900">
                     <Leaf className="h-4 w-4 shrink-0 text-emerald-600" />
@@ -440,9 +514,17 @@ export default function ProductDetail() {
                   <span className="w-44 font-semibold text-forest-900">Organic Status</span>
                   <span>{isOrganic ? 'Certified Organic Input' : 'Standard Agricultural Formulation'}</span>
                 </div>
-                <div className="flex py-2">
+                <div className="flex border-b border-forest-50 py-2">
                   <span className="w-44 font-semibold text-forest-900">Regulatory Reference</span>
                   <span className="font-mono">{product.regulatory_info || 'Demonstration Standard'}</span>
+                </div>
+                <div className="flex py-2">
+                  <span className="w-44 font-semibold text-forest-900">Verification Status</span>
+                  <span className={product.verification_status === 'unconfirmed' ? 'font-bold text-amber-800' : 'font-semibold text-emerald-700'}>
+                    {product.verification_status === 'unconfirmed'
+                      ? 'Verification required — not an application recommendation'
+                      : 'Verified for recommended regional crop use'}
+                  </span>
                 </div>
               </div>
             )}

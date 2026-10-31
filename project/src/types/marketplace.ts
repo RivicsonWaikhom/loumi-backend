@@ -32,8 +32,11 @@ export interface MarketplaceProduct {
   dosage_guidelines?: string;
   safety_precautions?: string;
   regulatory_info?: string;
+  verification_status?: 'confirmed' | 'unconfirmed' | 'not_applicable';
   seller_name: string;
   image_url?: string;
+  image_type?: 'official_packshot' | 'representative_reference' | 'unverified_reference';
+  image_note?: string;
   rating: number;
   reviews_count: number;
   is_active: number | boolean;
